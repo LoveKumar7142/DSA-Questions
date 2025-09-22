@@ -13,10 +13,10 @@ private:
         long number = 0;
 
         for(int i = ind;i<num.length();i++){
-            if(i>ind && num[i] == '0') return;
+            if(i>ind && num[ind] == '0') break;
             currStr+=num[i];
             number = number*10 + num[i] - '0';
-            if(i == 0){
+            if(ind == 0){
                 solve(num,target,i+1,path + currStr,number,number);
             }else{
                 solve(num,target,i+1,path+ "+" + currStr,eval+number,number);
